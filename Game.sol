@@ -7,27 +7,37 @@ pragma solidity >=0.4.22 <0.6.0;
 contract Game {
 
     //Game ID a unique id for game addressof
-    string public GameId = address + "Game name" 
+    string public GameId = address
     
-    //maximum number of item
-    uint256 public item1 = 100000000
-    uint256 public item2 = 100000000
-    uint256 public item3 = 100000000
-    uint256 public item4 = 100000000
-    uint256 public item5 = 100000000
-    uint256 public item6 = 100000000
-    uint256 public item7 = 100000000
+
+
+//the name of item     
+    string[] public items
+    
+//maximum number of item
+    uint256[] public itemsBalance
     
     mapping (address => uint256) itemsBalance;
     
 // return the balance of items in-game for a given gamer(address);
-    function GetGameItems (address gamer) external constant returns(uint256) {
+    function GetItemsBalance (address gamer, string password) external constant returns(uint256) {
         return itemsBalance[gamer]
     }
     
-    //Buy items
+    //Buy item
     function buyGameItems()
     
-    //Sell items
+    //Sell item
     function sellGameITems()
+    
+    //Transfer item to the game owner address
+    function transferItem(address _from, address _to, uint256 amount){
+        //
+    }
+    
+    //Listen to gamer while he play
+    function updateItemsbamance (address gamer, string password, action) return GetItemsBalance(){
+        transferItem () //cal
+    }
+    
 }
