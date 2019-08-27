@@ -18,7 +18,16 @@ contract Game {
     uint256 public item6 = 100000000
     uint256 public item7 = 100000000
     
-    function GetGamerItems (address gamer, address GameId, string password) public {
-     // return the number of everytime in-game for a given gamer(address);
+    mapping (address => uint256) itemsBalance;
+    
+// return the balance of items in-game for a given gamer(address);
+    function GetGameItems (address gamer) external constant returns(uint256) {
+        return itemsBalance[gamer]
     }
+    
+    //Buy items
+    function buyGameItems()
+    
+    //Sell items
+    function sellGameITems()
 }
