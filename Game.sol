@@ -2,20 +2,26 @@
 //Atheios blockchain
 //Smart contract to integrate game inside blockchain and save the gamer levels and state
 
-pragma solidity >=0.4.22 <0.6.0;
-
+pragma solidity ^0.5.11;
 
 contract Game{
 
     //Game ID a unique id for game
-    address public GameId;
+    address public gameId;
+    address[] public gamers;
     
-    function Game() public {
-        GameId = msg.sender;
+    function game() public {
+        gameId = msg.sender;
     }
     
-
-
+    function addGamer(address player) public{
+        gamers.push(player);
+    }
+    
+    function GamersList() public view returns (address[] memory){
+        return gamers;
+    }
+    
 //the name of item     
     string[] public items;
     
