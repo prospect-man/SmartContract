@@ -1,19 +1,37 @@
-//Atheios Gamer Prize.
-/*
-One of the Gamer Problem is that: Games change as time goes by:
-a Gamer said: “Sadly, eSports is not like traditional sports; hockey is hockey and football is football. 
-Games change as time goes by, the "scenes" will come and go, in eSports. Some lasts longer than others.”
-
-Atheios Gamer Prize SmartContact is the solution for this problem.
-
-No matter what game you play or where you live, if you play one of games integrate with Atheios blockchain
-you can participate in Atheios Gamer Prize and get reward.
-
-Atheios Gamer Prize is a internationnal Decentralized eSports tournament manager by a smartcontract
-*/
-
-pragma solidity ^0.5.2;
+pragma solidity ^0.5.11;
 
 contract AtheiosGamerPrize {
+    
+    address public manager;
+    
+    function managerPrize() public {
+        manager = msg.sender;
+    } 
+    
+    struct gamer {
+        address gamerId;
+        address gameId;
+        uint score;
+    }
+    
+    mapping (address => gamer) gamers;
+    address[] public gamersList;
+    
+    function setGamer(address _address, address _gamerId, address _gameId, uint _score) public {
+        var player = gamers[_address];
+
+        player.gamerId = _gamerId;
+        player.gameId = _gameId;
+        player.score = _score;
+        
+        gamersList.push(_address) -1;
+
+    }
+    
+
+    function getGamersList() public payable returns (address[] memory){
+        require(msg.value > .00001 ether);
+        return gamersList;
+    }
 
 }
