@@ -14,6 +14,9 @@ contract Game {
 //the name of item     
     string[] public items
     
+//the name of item     
+    uint8[] public level
+    
 //maximum number of item
     uint256[] public itemsBalance
     
@@ -35,7 +38,7 @@ contract Game {
         //
     }
     
-    //Listen to gamer while he play
+    //Listen to gamer while he plays
     function updateItemsbamance (address gamer, string password, action) return GetItemsBalance(){
         transferItem () //cal
     }
