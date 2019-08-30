@@ -1,5 +1,5 @@
 
-//Smart contract to create game inside blockchain
+//Smart contract to integrate game inside blockchain and save the gamer levels and state
 
 pragma solidity >=0.4.22 <0.6.0;
 
