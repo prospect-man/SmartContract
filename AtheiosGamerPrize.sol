@@ -1,6 +1,5 @@
+//Atheios Gamer Prize.
 /*
-Atheios Gamer Prize.
-
 One of the Gamer Problem is that: Games change as time goes by:
 a Gamer said: “Sadly, eSports is not like traditional sports; hockey is hockey and football is football. 
 Games change as time goes by, the "scenes" will come and go, in eSports. Some lasts longer than others.”
@@ -12,3 +11,9 @@ you can participate in Atheios Gamer Prize and get reward.
 
 Atheios Gamer Prize is a internationnal Decentralized eSports tournament manager by a smartcontract
 */
+
+pragma solidity ^0.5.2;
+
+contract AtheiosGamerPrize {
+
+}
