@@ -1,0 +1,23 @@
+pragma solidity ^0.5.11;
+
+contract AtheiosGamerPrize {
+    
+    address public manager;
+    address[] public gamers;
+    
+    function tournamentManager() public {
+        manager = msg.sender;
+    } 
+    
+    function setGamer() public payable{
+        gamers.push(msg.sender);
+    }
+    
+    uint prize;  //look in
+    uint winner = win(); //look in
+    
+    function pickTheWinner() public payable{
+        gamers[winner].transfer(prize) ;
+    }
+
+}
