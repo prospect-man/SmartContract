@@ -3,7 +3,7 @@ pragma solidity ^0.5.11;
 contract AtheiosGamerPrize {
     
     address public manager;
-    address[] public gamers;
+    address payable[] gamers;
     
     function tournamentManager() public {
         manager = msg.sender;
@@ -13,11 +13,18 @@ contract AtheiosGamerPrize {
         gamers.push(msg.sender);
     }
     
-    uint prize;  //look in
-    uint winner = win(); //look in
+    uint prize = 1;  //look in
+    uint winner = 1; //look in
     
-    function pickTheWinner() public payable{
+    function pickTheWinner() public restricted{
+        //require(msg.sender == manager); // security
         gamers[winner].transfer(prize) ;
+        gamers = new address payable[](0);
+    }
+    
+    modifier restricted() {
+    require(msg.sender == manager); // security
+    _;
     }
 
 }
