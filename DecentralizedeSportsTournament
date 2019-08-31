@@ -13,8 +13,8 @@ contract AtheiosGamerPrize {
         gamers.push(msg.sender);
     }
     
-    uint prize = 1;  //look in
-    uint winner = 1; //look in
+    uint prize = 1;  //Function looking for
+    uint winner = 1; //Function looking for
     
     function pickTheWinner() public restricted{
         //require(msg.sender == manager); // security
@@ -25,6 +25,10 @@ contract AtheiosGamerPrize {
     modifier restricted() {
     require(msg.sender == manager); // security
     _;
+    }
+    
+    function getGamers() public view returns (address payable[] memory){
+        return gamers;
     }
 
 }
